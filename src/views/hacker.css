@@ -1,0 +1,15 @@
+body {
+    background: url('/public/hacked2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0; 
+  }
+  .website{
+ 
+        background: none; 
+        background-color: #9db685; 
+        padding: 20px; 
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+
+  }
