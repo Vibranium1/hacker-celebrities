@@ -163,7 +163,7 @@ export default function Hacker() {
   
   return (
     <div >
-      <div className="website container" style={{ marginTop: "80px", marginLeft:"550px", marginBottom:"70px", width:"740px" }}>
+      <div className="website container align-item-center border-secondary" style={{ marginTop: "80px",  marginBottom:"70px", width:"740px" }}>
         <div>
           <h3>Celebrity List</h3>
           <input className="border-secondary"
