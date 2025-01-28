@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DownArrow from "./downarrow.svg";
-import UpArrow from "./arrow_up.svg";
+import UpArrow from "./up-arrow2.svg";
 import Edit from "./edit.svg";
 import Delete from "./trash.svg";
 import Tick from "./tick.svg";
@@ -162,16 +162,15 @@ export default function Hacker() {
   }
   
   return (
-    <div >
-      <div className="website container align-item-center border-secondary" style={{ marginTop: "80px",  marginBottom:"70px", width:"740px" }}>
+    <div className="p-5 d-flex align-items-center justify=content-center hacker">
+      <div className="website container border-secondary text-success " style={{ }}>
         <div>
           <h3>Celebrity List</h3>
-          <input className="border-secondary"
+          <input className="inputceleb border-secondary border"
             type="text"
-            placeholder="Search celebrity"
-            style={{ width: "700px", height: "40px", borderRadius: "10px", marginBottom:"30px" }
-          }
-          value={search}
+            
+            placeholder="Search celebrity..."
+            value={search}
           onChange={(e)=>{
             setSearch(e.target.value)
                       }}
@@ -184,16 +183,10 @@ export default function Hacker() {
             return (
               <div key={item.id}>
                 <div
-                  className="border p-3"
-                  style={{
-                    width: "700px",
-                    marginTop: "20px",
-                    position: "relative",
-                    borderRadius: "10px",
-                          }}
+                  className="border datadisplay border-success p-3"
                 >
                   <div>  
-                    <div className="d-flex  align-item-center p-3"
+                    <div className="d-flex  align-item-center "
                     style={{
                       height: "100px",
                       position: "relative",
@@ -219,14 +212,14 @@ export default function Hacker() {
                       }}
                     >
                       {editingId===item.id? (                  <div className="">
-                      <input type="text"  style={{width:"100px"}} value={item.first} onChange={(e)=>{ handleEditChange(item.id,"first",e.target.value)}}/>
-                      <input type="text" style={{width:"100px",marginLeft:"30px"}} value={item.last} onChange={(e)=>{ handleEditChange(item.id,"last",e.target.value)}}/>
+                      <input type="text border-secondary border"  style={{width:"100px", backgroundColor:"black",color:"green"}} value={item.first} onChange={(e)=>{ handleEditChange(item.id,"first",e.target.value)}}/>
+                      <input type="text border-secondary border" style={{width:"100px",marginLeft:"30px",  backgroundColor:"black",color:"green"}} value={item.last} onChange={(e)=>{ handleEditChange(item.id,"last",e.target.value)}}/>
                       </div>
                       ): (`${item.first} ${item.last}`)}
                       
                     </div>
 
-                    <img
+                    <img className="m-2"
                       src={open[item.id] ? UpArrow : DownArrow}
                       alt="svgicon m-5"
                       onClick={(event: any) => {
@@ -265,8 +258,8 @@ export default function Hacker() {
      
         <div className="col-sm" style={{ display: "flex", flexDirection: "column" }}>
           <input
-            type="text"
-            style={{ width: "100%", height: "36px" }}
+            type="text border-secondary border"
+            style={{ width: "100%", height: "36px",  backgroundColor:"black",color:"green" }}
             value={item.age}
             onChange={(e) => {
               const ageValue = e.target.value;
@@ -294,7 +287,7 @@ export default function Hacker() {
         <div className="col-sm">
           <select
             defaultValue={originalgender}
-            style={{ width: "100%", height: "36px" }}
+            style={{ width: "100%", height: "36px",  backgroundColor:"black",color:"green" }}
             onChange={(e) => handleEditChange(item.id, "gender", e.target.value)}
           >
             {optionsg.map((option, idx) => (
@@ -306,8 +299,8 @@ export default function Hacker() {
         
         <div className="col-sm">
           <input
-            type="text"
-            style={{ width: "100%", height: "36px" }}
+            type="text border-secondary border"
+            style={{ width: "100%", height: "36px",  backgroundColor:"black",color:"green" }}
             value={item.country}
             onChange={(e) => {
               let countryValue = e.target.value;
@@ -355,7 +348,7 @@ export default function Hacker() {
                       <strong style={{}}>Description:</strong>
                       {editingId===item.id?(
                       <div>
-                       <textarea value={item.description} style={{width:"635px", height:"110px", marginTop:"10px"}}onChange={(e)=>{
+                       <textarea value={item.description} style={{width:"635px", height:"110px", marginTop:"10px",  backgroundColor:"black",color:"green"}}onChange={(e)=>{
                         const descriptiontext = e.target.value;
                         handleEditChange(item.id,"description",e.target.value)
                         if(!descriptiontext.trim()){
@@ -392,12 +385,11 @@ export default function Hacker() {
                           }} />
                           <button
                                disabled={!isDataChanged}
-                                 onClick={() => handleSave(item.id)}
                                                  style={{
                                                    alignItems: "center",
                                                    justifyContent: "center",
                                                    padding: "10px",
-                                                   backgroundColor: isDataChanged ? "#4CAF50" : "#C0C0C0", // Green when enabled, gray when disabled
+                                                   backgroundColor: isDataChanged ? "#4CAF50" : "#F5F5F5", // Green when enabled, gray when disabled
                                                    border: "none",
                                                    borderRadius: "5px",
                                                    display: "flex",

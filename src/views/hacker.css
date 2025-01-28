@@ -7,9 +7,52 @@ body {
   .website{
  
         background: none; 
-        background-color: #9db685; 
+        background-color: #000000; 
         padding: 20px; 
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        width:740px;
+        max-width: 100%;
 
+  }
+
+  .datadisplay{
+      width: 700px;
+      margin-top: 20px;
+      position: relative;
+      border-radius: 10px;
+  }
+  .inputceleb{
+      width: 700px;
+      height: 40px;
+      border-radius: 10px;
+      margin-bottom:30px;
+      background-color:black;
+      color:green;
+  }
+
+  @media only screen and (max-width: 880px) {
+      .hacker {
+          max-width: 99%; 
+      }
+     .inputceleb{
+      max-width: 99%;
+     }
+     .datadisplay{
+      max-width: 99%;
+     }
+
+  }
+
+  @media screen and (max-width:570px){
+      .hacker {
+            max-width: 95%; 
+        }
+       .inputceleb{
+        max-width: 95%;
+       }
+       .datadisplay{
+        max-width: 95%;
+       }
+      
   }
